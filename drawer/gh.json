@@ -1,0 +1,19 @@
+{
+    "version": "2.103.3",
+    "description": "GitHub's official command-line tool",
+    "homepage": "https://cli.github.com",
+    "license": "MIT",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/cli/cli/releases/download/v2.103.3/gh_2.103.3_macOS_arm64.zip",
+            "hash": "sha256:d700207eae9ae98fe2b89535c2c087c07823d4628c56364695a5a07ef311c062",
+            "extract_dir": "gh_2.103.3_macOS_arm64"
+        },
+        "x86_64": {
+            "url": "https://github.com/cli/cli/releases/download/v2.103.3/gh_2.103.3_macOS_amd64.zip",
+            "hash": "sha256:a2f86418f4350ae6e9ec60d5000bdf7665728436946a97fc27fe50e6ae752682",
+            "extract_dir": "gh_2.103.3_macOS_amd64"
+        }
+    },
+    "bin": "bin/gh"
+}
