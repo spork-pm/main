@@ -15,5 +15,20 @@
             "extract_dir": "gh_2.103.3_macOS_amd64"
         }
     },
-    "bin": "bin/gh"
+    "bin": "bin/gh",
+    "checkver": {
+        "github": "cli/cli"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/cli/cli/releases/download/v$version/gh_$version_macOS_arm64.zip",
+                "extract_dir": "gh_$version_macOS_arm64"
+            },
+            "x86_64": {
+                "url": "https://github.com/cli/cli/releases/download/v$version/gh_$version_macOS_amd64.zip",
+                "extract_dir": "gh_$version_macOS_amd64"
+            }
+        }
+    }
 }

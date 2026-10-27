@@ -31,5 +31,25 @@
         "Global packages (npm install -g) are kept in ~/.spork/persist/nodejs/global across updates,",
         "and their commands are on PATH in new terminals (spork shellenv adds them).",
         "nodejs and nodejs-lts provide the same commands; install only one of them."
-    ]
+    ],
+    "checkver": {
+        "url": "https://nodejs.org/dist/index.json",
+        "jsonpath": "$[0].version",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://nodejs.org/dist/v$version/node-v$version-darwin-arm64.tar.gz",
+                "extract_dir": "node-v$version-darwin-arm64"
+            },
+            "x86_64": {
+                "url": "https://nodejs.org/dist/v$version/node-v$version-darwin-x64.tar.gz",
+                "extract_dir": "node-v$version-darwin-x64"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHASUMS256.txt"
+        }
+    }
 }

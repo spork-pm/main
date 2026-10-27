@@ -51,5 +51,19 @@
         "System-wide settings (git config --system) are kept in ~/.spork/persist/git/etc/gitconfig across updates.",
         "Git Credential Manager is included. To store credentials in your keychain with it, run:",
         "    git config --global credential.helper manager"
-    ]
+    ],
+    "checkver": {
+        "github": "desktop/dugite-native",
+        "regex": "download/v(?<version>[\\d.]+-\\d+)/dugite-native-v[\\d.]+-(?<commit>[0-9a-f]+)-macOS-arm64\\.tar\\.gz"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/desktop/dugite-native/releases/download/v$version/dugite-native-v$matchHead-$matchCommit-macOS-arm64.tar.gz"
+            },
+            "x86_64": {
+                "url": "https://github.com/desktop/dugite-native/releases/download/v$version/dugite-native-v$matchHead-$matchCommit-macOS-x64.tar.gz"
+            }
+        }
+    }
 }
