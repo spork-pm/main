@@ -18,6 +18,7 @@ spork drawer add main https://github.com/spork-pm/main
 | `nodejs-lts` | An asynchronous event driven JavaScript runtime designed to build scalable network applications (Long Term Support) |
 | `nodejs` | An asynchronous event driven JavaScript runtime designed to build scalable network applications |
 | `ripgrep` | Recursively search directories for a regex pattern |
+| `starship` | The minimal, blazing fast, and extremely customizable prompt for any shell |
 
 ## Adding a package
 
