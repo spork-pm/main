@@ -16,6 +16,7 @@
         }
     },
     "persist": "global",
+    "env_add_path": "$persist_dir/global/bin",
     "post_install": [
         "# npm installs global packages inside its own folder, which updates replace.",
         "# Point npm's built-in config at the persisted 'global' folder instead.",
@@ -27,9 +28,8 @@
         "bin/npx"
     ],
     "notes": [
-        "Global packages (npm install -g) are kept in ~/.spork/persist/nodejs/global across updates.",
-        "To run their commands, add this line to ~/.zshrc:",
-        "    export PATH=\"$HOME/.spork/persist/nodejs/global/bin:$PATH\"",
+        "Global packages (npm install -g) are kept in ~/.spork/persist/nodejs/global across updates,",
+        "and their commands are on PATH in new terminals (spork shellenv adds them).",
         "nodejs and nodejs-lts provide the same commands; install only one of them."
     ]
 }
