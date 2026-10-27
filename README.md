@@ -13,7 +13,10 @@ spork drawer add main https://github.com/spork-pm/main
 | Package | Description |
 |---|---|
 | `fd` | A simple, fast and user-friendly alternative to find |
+| `git` | A free and open source distributed version control system |
 | `jq` | Command-line JSON processor |
+| `nodejs-lts` | An asynchronous event driven JavaScript runtime designed to build scalable network applications (Long Term Support) |
+| `nodejs` | An asynchronous event driven JavaScript runtime designed to build scalable network applications |
 | `ripgrep` | Recursively search directories for a regex pattern |
 
 ## Adding a package

@@ -1,0 +1,55 @@
+{
+    "version": "2.56.0-2",
+    "description": "A free and open source distributed version control system",
+    "homepage": "https://git-scm.com",
+    "license": "GPL-2.0-only",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/desktop/dugite-native/releases/download/v2.56.0-2/dugite-native-v2.56.0-a44aeca-macOS-arm64.tar.gz",
+            "hash": "sha256:1110de343de11cc6f469b782b60f36217b9199b5e06875dd65baa26dd60563c7"
+        },
+        "x86_64": {
+            "url": "https://github.com/desktop/dugite-native/releases/download/v2.56.0-2/dugite-native-v2.56.0-a44aeca-macOS-x64.tar.gz",
+            "hash": "sha256:52cc663281e1ec2f1d76ba781193ca4847e62dbbf767f6c99ec9ec5b978a7659"
+        }
+    },
+    "pre_install": [
+        "# This portable build (from GitHub Desktop's dugite-native) only finds its own",
+        "# files when GIT_EXEC_PATH and GIT_CONFIG_SYSTEM are set, so the commands spork",
+        "# links are small wrappers that set them. Paths go through 'current' so the",
+        "# wrappers keep working after updates.",
+        "root=\"$(dirname \"$dir\")/current\"",
+        "mkdir -p \"$dir/spork-bin\"",
+        "for cmd in git scalar; do",
+        "  cat > \"$dir/spork-bin/$cmd\" <<EOF",
+        "#!/bin/sh",
+        "export GIT_EXEC_PATH=\"$root/libexec/git-core\"",
+        "export GIT_CONFIG_SYSTEM=\"\\${GIT_CONFIG_SYSTEM:-$root/etc/gitconfig}\"",
+        "exec \"$root/bin/$cmd\" \"\\$@\"",
+        "EOF",
+        "  chmod +x \"$dir/spork-bin/$cmd\"",
+        "done"
+    ],
+    "persist": "etc/gitconfig",
+    "post_install": [
+        "# Point 'git init' at the bundled templates, unless the system config already does.",
+        "# Set in the system config so a templateDir in your own config still wins.",
+        "git=\"$dir/spork-bin/git\"",
+        "\"$git\" config --system init.templateDir >/dev/null || \"$git\" config --system init.templateDir \"$(dirname \"$dir\")/current/share/git-core/templates\""
+    ],
+    "bin": [
+        [
+            "spork-bin/git",
+            "git"
+        ],
+        [
+            "spork-bin/scalar",
+            "scalar"
+        ]
+    ],
+    "notes": [
+        "System-wide settings (git config --system) are kept in ~/.spork/persist/git/etc/gitconfig across updates.",
+        "Git Credential Manager is included. To store credentials in your keychain with it, run:",
+        "    git config --global credential.helper manager"
+    ]
+}

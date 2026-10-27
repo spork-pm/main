@@ -1,0 +1,36 @@
+{
+    "version": "24.22.1",
+    "description": "An asynchronous event driven JavaScript runtime designed to build scalable network applications (Long Term Support)",
+    "homepage": "https://nodejs.org",
+    "license": "MIT",
+    "architecture": {
+        "arm64": {
+            "url": "https://nodejs.org/dist/v24.22.1/node-v24.22.1-darwin-arm64.tar.gz",
+            "hash": "sha256:89c682593d76cd44233fa53b1563264e7de9cbb189cad169135c5b4fadfbc0a7",
+            "extract_dir": "node-v24.22.1-darwin-arm64"
+        },
+        "x86_64": {
+            "url": "https://nodejs.org/dist/v24.22.1/node-v24.22.1-darwin-x64.tar.gz",
+            "hash": "sha256:d132557e7ee2b85af08b0c8c34338e65c6430f2238d01f727728ef42dc83b035",
+            "extract_dir": "node-v24.22.1-darwin-x64"
+        }
+    },
+    "persist": "global",
+    "post_install": [
+        "# npm installs global packages inside its own folder, which updates replace.",
+        "# Point npm's built-in config at the persisted 'global' folder instead.",
+        "printf 'prefix=%s\\n' \"$(readlink \"$dir/global\")\" > \"$dir/lib/node_modules/npm/npmrc\""
+    ],
+    "bin": [
+        "bin/node",
+        "bin/npm",
+        "bin/npx",
+        "bin/corepack"
+    ],
+    "notes": [
+        "Global packages (npm install -g) are kept in ~/.spork/persist/nodejs-lts/global across updates.",
+        "To run their commands, add this line to ~/.zshrc:",
+        "    export PATH=\"$HOME/.spork/persist/nodejs-lts/global/bin:$PATH\"",
+        "nodejs-lts and nodejs provide the same commands; install only one of them."
+    ]
+}
