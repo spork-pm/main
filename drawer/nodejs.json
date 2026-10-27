@@ -1,0 +1,35 @@
+{
+    "version": "26.12.1",
+    "description": "An asynchronous event driven JavaScript runtime designed to build scalable network applications",
+    "homepage": "https://nodejs.org",
+    "license": "MIT",
+    "architecture": {
+        "arm64": {
+            "url": "https://nodejs.org/dist/v26.12.1/node-v26.12.1-darwin-arm64.tar.gz",
+            "hash": "sha256:1901d539912c02afa10d1cc126943a8855a7eedebe830119463470db5e6c59e8",
+            "extract_dir": "node-v26.12.1-darwin-arm64"
+        },
+        "x86_64": {
+            "url": "https://nodejs.org/dist/v26.12.1/node-v26.12.1-darwin-x64.tar.gz",
+            "hash": "sha256:b85c2ea4420ad0bc4abf2dc6cf1f55130ed681f1cabf60cf3f526e4c9e2712ff",
+            "extract_dir": "node-v26.12.1-darwin-x64"
+        }
+    },
+    "persist": "global",
+    "post_install": [
+        "# npm installs global packages inside its own folder, which updates replace.",
+        "# Point npm's built-in config at the persisted 'global' folder instead.",
+        "printf 'prefix=%s\\n' \"$(readlink \"$dir/global\")\" > \"$dir/lib/node_modules/npm/npmrc\""
+    ],
+    "bin": [
+        "bin/node",
+        "bin/npm",
+        "bin/npx"
+    ],
+    "notes": [
+        "Global packages (npm install -g) are kept in ~/.spork/persist/nodejs/global across updates.",
+        "To run their commands, add this line to ~/.zshrc:",
+        "    export PATH=\"$HOME/.spork/persist/nodejs/global/bin:$PATH\"",
+        "nodejs and nodejs-lts provide the same commands; install only one of them."
+    ]
+}
