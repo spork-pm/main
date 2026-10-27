@@ -20,5 +20,21 @@
         "For bash use 'starship init bash' in ~/.bash_profile; for fish, 'starship init fish | source' in config.fish.",
         "Many prompt symbols need a Nerd Font (https://www.nerdfonts.com) set in your terminal.",
         "Settings go in ~/.config/starship.toml."
-    ]
+    ],
+    "checkver": {
+        "github": "starship/starship"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/starship/starship/releases/download/v$version/starship-aarch64-apple-darwin.tar.gz"
+            },
+            "x86_64": {
+                "url": "https://github.com/starship/starship/releases/download/v$version/starship-x86_64-apple-darwin.tar.gz"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
 }

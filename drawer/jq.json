@@ -13,5 +13,18 @@
             "hash": "sha256:e94b266e3c26690550006abe63152b782280f4e14374accdf04cbde844f00bc0"
         }
     },
-    "bin": "jq"
+    "bin": "jq",
+    "checkver": {
+        "github": "jqlang/jq"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/jqlang/jq/releases/download/jq-$version/jq-macos-arm64#/jq"
+            },
+            "x86_64": {
+                "url": "https://github.com/jqlang/jq/releases/download/jq-$version/jq-macos-amd64#/jq"
+            }
+        }
+    }
 }

@@ -15,5 +15,18 @@
             "extract_dir": "ripgrep-15.2.0-x86_64-apple-darwin"
         }
     },
-    "bin": "rg"
+    "bin": "rg",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/BurntSushi/ripgrep/releases/download/$version/ripgrep-$version-aarch64-apple-darwin.tar.gz",
+                "extract_dir": "ripgrep-$version-aarch64-apple-darwin"
+            },
+            "x86_64": {
+                "url": "https://github.com/BurntSushi/ripgrep/releases/download/$version/ripgrep-$version-x86_64-apple-darwin.tar.gz",
+                "extract_dir": "ripgrep-$version-x86_64-apple-darwin"
+            }
+        }
+    }
 }
