@@ -17,6 +17,7 @@ spork drawer add main https://github.com/spork-pm/main
 | `jq` | Command-line JSON processor |
 | `nodejs-lts` | An asynchronous event driven JavaScript runtime designed to build scalable network applications (Long Term Support) |
 | `nodejs` | An asynchronous event driven JavaScript runtime designed to build scalable network applications |
+| `python` | A programming language that lets you work quickly and integrate systems more effectively |
 | `ripgrep` | Recursively search directories for a regex pattern |
 | `starship` | The minimal, blazing fast, and extremely customizable prompt for any shell |
 
