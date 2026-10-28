@@ -1,0 +1,32 @@
+{
+    "version": "2.91.0",
+    "description": "A cross-platform command-line tool to connect to Azure and execute administrative commands on Azure resources",
+    "homepage": "https://aka.ms/cli",
+    "license": "MIT",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/Azure/azure-cli/releases/download/azure-cli-2.91.0/azure-cli-2.91.0-macos-arm64.tar.gz",
+            "hash": "dc28a3eef40d0b20f266f1e76b7a91f7a8ecdeaa28d0c855459eaa74edacbae6"
+        }
+    },
+    "env_set": {
+        "AZURE_CLI_PATH": "$dir/bin",
+        "AzureCLIPath": "$dir/bin"
+    },
+    "bin": "bin/az",
+    "checkver": {
+        "github": "https://github.com/Azure/azure-cli",
+        "regex": "azure-cli-([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/Azure/azure-cli/releases/download/azure-cli-$version/azure-cli-$version-macos-arm64.tar.gz"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/Azure/azure-cli/releases/tag/azure-cli-$version",
+            "regex": "$sha256.*?$basename"
+        }
+    }
+}
