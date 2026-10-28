@@ -9,7 +9,7 @@
         }
     },
     "bin": [
-        "bin/kubectl"
+        "kubectl"
     ],
     "checkver": {
         "url": "https://dl.k8s.io/release/stable.txt",
