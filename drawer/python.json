@@ -1,0 +1,71 @@
+{
+    "version": "3.15.2-20261026",
+    "description": "A programming language that lets you work quickly and integrate systems more effectively",
+    "homepage": "https://www.python.org",
+    "license": "PSF-2.0",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.15.2+20261026-aarch64-apple-darwin-install_only.tar.gz",
+            "hash": "sha256:285a6b924713bec9c1cdf442ba5ebfbafbab070060b34d607c30546b758e64a6"
+        },
+        "x86_64": {
+            "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.15.2+20261026-x86_64-apple-darwin-install_only.tar.gz",
+            "hash": "sha256:c09fb50147ca9743a6d21e765d6243d8a21da04aed2d83b74f5a5c164d8d85bc"
+        }
+    },
+    "extract_dir": "python",
+    "persist": "global",
+    "env_add_path": "$persist_dir/global/bin",
+    "post_install": [
+        "# pip installs into the package's own site-packages, which updates replace.",
+        "# Point it at the persisted 'global' folder instead (pip reads $dir/pip.conf),",
+        "# and put that folder's site-packages on sys.path with a .pth file.",
+        "global=\"$(readlink \"$dir/global\")\"",
+        "printf '[install]\\nprefix = %s\\n' \"$global\" > \"$dir/pip.conf\"",
+        "pyver=\"$(\"$dir/bin/python3\" -c 'import sys; print(\"%d.%d\" % sys.version_info[:2])')\"",
+        "mkdir -p \"$global/lib/python$pyver/site-packages\"",
+        "echo \"$global/lib/python$pyver/site-packages\" >\"$dir/lib/python$pyver/site-packages/spork-global.pth\"",
+        "# Commands pip installed earlier start with the path of the Python version they",
+        "# were installed with, which updates delete. Point them at 'current' instead.",
+        "apps=\"$(dirname \"$dir\")\"",
+        "for f in \"$global\"/bin/*; do",
+        "  [ -f \"$f\" ] && [ ! -L \"$f\" ] && [ \"$(head -c 2 \"$f\")\" = '#!' ] || continue",
+        "  sed -i '' -E \"1,3s#$apps/[^/]+/bin/python3[.0-9]*#$apps/current/bin/python3#\" \"$f\"",
+        "done"
+    ],
+    "bin": [
+        "bin/python3",
+        "bin/python",
+        "bin/pip3",
+        "bin/pip",
+        "bin/pydoc3",
+        "bin/idle3",
+        "bin/python3-config"
+    ],
+    "notes": [
+        "This is a portable CPython build from python-build-standalone (https://github.com/astral-sh/python-build-standalone).",
+        "Packages installed with 'pip install' are kept in ~/.spork/persist/python/global across updates,",
+        "and their commands are on PATH in new terminals (spork shellenv adds them).",
+        "After an update to a new 3.X version (e.g. 3.15 to 3.16), install your packages again.",
+        "Don't use 'pip install --user': it conflicts with the persisted install folder.",
+        "Recreate virtual environments after an update: they point at the old version's folder."
+    ],
+    "checkver": {
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/latest/download/SHA256SUMS",
+        "regex": "(?s).*cpython-(?<python>3\\.\\d+\\.\\d+)\\+(?<build>\\d+)-aarch64-apple-darwin-install_only\\.tar\\.gz",
+        "replace": "${python}-${build}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/astral-sh/python-build-standalone/releases/download/$preReleaseVersion/cpython-$matchHead+$preReleaseVersion-aarch64-apple-darwin-install_only.tar.gz"
+            },
+            "x86_64": {
+                "url": "https://github.com/astral-sh/python-build-standalone/releases/download/$preReleaseVersion/cpython-$matchHead+$preReleaseVersion-x86_64-apple-darwin-install_only.tar.gz"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS"
+        }
+    }
+}
