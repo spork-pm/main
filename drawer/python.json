@@ -14,6 +14,25 @@
         }
     },
     "extract_dir": "python",
+    "persist": "global",
+    "env_add_path": "$persist_dir/global/bin",
+    "post_install": [
+        "# pip installs into the package's own site-packages, which updates replace.",
+        "# Point it at the persisted 'global' folder instead (pip reads $dir/pip.conf),",
+        "# and put that folder's site-packages on sys.path with a .pth file.",
+        "global=\"$(readlink \"$dir/global\")\"",
+        "printf '[install]\\nprefix = %s\\n' \"$global\" > \"$dir/pip.conf\"",
+        "pyver=\"$(\"$dir/bin/python3\" -c 'import sys; print(\"%d.%d\" % sys.version_info[:2])')\"",
+        "mkdir -p \"$global/lib/python$pyver/site-packages\"",
+        "echo \"$global/lib/python$pyver/site-packages\" >\"$dir/lib/python$pyver/site-packages/spork-global.pth\"",
+        "# Commands pip installed earlier start with the path of the Python version they",
+        "# were installed with, which updates delete. Point them at 'current' instead.",
+        "apps=\"$(dirname \"$dir\")\"",
+        "for f in \"$global\"/bin/*; do",
+        "  [ -f \"$f\" ] && [ ! -L \"$f\" ] && [ \"$(head -c 2 \"$f\")\" = '#!' ] || continue",
+        "  sed -i '' -E \"1,3s#$apps/[^/]+/bin/python3[.0-9]*#$apps/current/bin/python3#\" \"$f\"",
+        "done"
+    ],
     "bin": [
         "bin/python3",
         "bin/python",
@@ -25,8 +44,10 @@
     ],
     "notes": [
         "This is a portable CPython build from python-build-standalone (https://github.com/astral-sh/python-build-standalone).",
-        "Packages installed with plain 'pip install' are lost on update. Use a virtual environment",
-        "(python3 -m venv .venv) or 'pip install --user' (commands land in ~/Library/Python/3.X/bin).",
+        "Packages installed with 'pip install' are kept in ~/.spork/persist/python/global across updates,",
+        "and their commands are on PATH in new terminals (spork shellenv adds them).",
+        "After an update to a new 3.X version (e.g. 3.15 to 3.16), install your packages again.",
+        "Don't use 'pip install --user': it conflicts with the persisted install folder.",
         "Recreate virtual environments after an update: they point at the old version's folder."
     ],
     "checkver": {
