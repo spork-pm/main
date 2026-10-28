@@ -1,18 +1,18 @@
 {
-    "version": "26.12.1",
+    "version": "26.13.0",
     "description": "An asynchronous event driven JavaScript runtime designed to build scalable network applications",
     "homepage": "https://nodejs.org",
     "license": "MIT",
     "architecture": {
         "arm64": {
-            "url": "https://nodejs.org/dist/v26.12.1/node-v26.12.1-darwin-arm64.tar.gz",
-            "hash": "sha256:1901d539912c02afa10d1cc126943a8855a7eedebe830119463470db5e6c59e8",
-            "extract_dir": "node-v26.12.1-darwin-arm64"
+            "url": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-darwin-arm64.tar.gz",
+            "hash": "sha256:d38bd5e5a2ddce6bbb5ce45e46e208337da4d51fffe611e567fd32073d6439f6",
+            "extract_dir": "node-v26.13.0-darwin-arm64"
         },
         "x86_64": {
-            "url": "https://nodejs.org/dist/v26.12.1/node-v26.12.1-darwin-x64.tar.gz",
-            "hash": "sha256:b85c2ea4420ad0bc4abf2dc6cf1f55130ed681f1cabf60cf3f526e4c9e2712ff",
-            "extract_dir": "node-v26.12.1-darwin-x64"
+            "url": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-darwin-x64.tar.gz",
+            "hash": "sha256:525c9b29bb0263d687de60a4cec0e2a6db876a8eb032369e5795eca71e7c358e",
+            "extract_dir": "node-v26.13.0-darwin-x64"
         }
     },
     "persist": "global",
