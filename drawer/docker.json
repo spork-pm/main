@@ -1,0 +1,28 @@
+{
+    "version": "29.9.2",
+    "description": "Docker CLI & Docker Engine for Windows containers. Docker is an open platform for developing, shipping, and running applications.",
+    "homepage": "https://docs.docker.com/engine",
+    "license": "Apache-2.0",
+    "architecture": {
+        "arm64": {
+            "url": "https://download.docker.com/mac/static/stable/aarch64/docker-29.9.2.tgz",
+            "hash": "ea8a2ce5ac31f9f5f3fb711a7a485e1e46cc7a69798a629a70306f6e6af25b7a"
+        }
+    },
+    "extract_dir": "docker",
+    "bin": "docker",
+    "checkver": {
+        "github": "https://github.com/moby/moby",
+        "regex": "docker-v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://download.docker.com/mac/static/stable/aarch64/docker-$version.tgz"
+            }
+        }
+    },
+    "notes": [
+        "To connect to a remote docker engine, you can create a DOCKER_HOST environment variable like for example ssh://host"
+    ]
+}
