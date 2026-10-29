@@ -22,7 +22,7 @@
         },
         "hash": {
             "url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/$majorVersion.$minorVersion/releases.json",
-            "regex": "(?s)$basename.*?$sha512"
+            "regex": "/$basename\",\\s*\"hash\":\\s*\"(?<hash>[0-9a-f]{128})\""
         }
     }
 }
