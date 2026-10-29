@@ -12,6 +12,7 @@ spork drawer add main https://github.com/spork-pm/main
 
 | Package | Description |
 |---|---|
+| `apfel` | On-device AI from the command line via Apple Intelligence: CLI, chat and OpenAI-compatible server |
 | `azure-cli` | A cross-platform command-line tool to connect to Azure and execute administrative commands on Azure resources |
 | `azure-kubelogin` | A client-go credential (exec) plugin implementing Azure authentication |
 | `docker` | Docker command-line client, for a Docker engine running elsewhere (Colima, a VM or a remote host) |
