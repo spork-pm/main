@@ -1,0 +1,24 @@
+{
+    "version": "1.16.0",
+    "description": "On-device AI from the command line via Apple Intelligence: CLI, chat and OpenAI-compatible server",
+    "homepage": "https://apfel.franzai.com",
+    "license": "MIT",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/Arthur-Ficial/apfel/releases/download/v1.16.0/apfel-1.16.0-arm64-macos.tar.gz",
+            "hash": "sha256:2ba07b99c8c238fd4a57dd721ab7309ea072fc434b50b653069c2f8428838a57"
+        }
+    },
+    "bin": "apfel",
+    "notes": "apfel needs macOS 26 or later on Apple silicon, with Apple Intelligence turned on in System Settings.",
+    "checkver": {
+        "github": "Arthur-Ficial/apfel"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/Arthur-Ficial/apfel/releases/download/v$version/apfel-$version-arm64-macos.tar.gz"
+            }
+        }
+    }
+}
