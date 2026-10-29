@@ -1,11 +1,12 @@
 {
     "version": "1.37.2",
-    "description": "Control the Kubernetes cluster manager.",
+    "description": "Control the Kubernetes cluster manager",
     "homepage": "https://kubernetes.io/docs/reference/kubectl/",
     "license": "Apache-2.0",
     "architecture": {
         "arm64": {
-            "url": "https://dl.k8s.io/release/v1.37.2/bin/darwin/arm64/kubectl"
+            "url": "https://dl.k8s.io/release/v1.37.2/bin/darwin/arm64/kubectl",
+            "hash": "sha256:55701af0d51815ee335f240e48acf0959c3c23017ed3fa816e880c4a92bae581"
         }
     },
     "bin": [

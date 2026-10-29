@@ -1,12 +1,12 @@
 {
     "version": "4.3.1",
-    "description": "The package manager for Kubernetes.",
+    "description": "The package manager for Kubernetes",
     "homepage": "https://helm.sh",
     "license": "Apache-2.0",
     "architecture": {
         "arm64": {
             "url": "https://get.helm.sh/helm-v4.3.1-darwin-arm64.tar.gz",
-            "hash": "6b4e61c8cd27d99e5a801e63ff25dd5c70b36875c2cd659d3e9ce6b76fc23198",
+            "hash": "sha256:6b4e61c8cd27d99e5a801e63ff25dd5c70b36875c2cd659d3e9ce6b76fc23198",
             "extract_dir": "darwin-arm64"
         }
     },
@@ -17,7 +17,7 @@
     "autoupdate": {
         "architecture": {
             "arm64": {
-                "url": "https://get.helm.sh/helm-v$version-darwin-arm64.zip"
+                "url": "https://get.helm.sh/helm-v$version-darwin-arm64.tar.gz"
             }
         },
         "hash": {
