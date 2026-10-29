@@ -1,0 +1,27 @@
+{
+    "version": "1.17.1",
+    "description": "Create and manage infrastructure as code using simple declarative configuration files.",
+    "homepage": "https://www.terraform.io",
+    "license": "BUSL-1.1",
+    "architecture": {
+        "arm64": {
+            "url": "https://releases.hashicorp.com/terraform/1.17.1/terraform_1.17.1_darwin_arm64.zip",
+            "hash": "b1ecb3fe0d0a0290c1ab6f83d967d43f25da05d0b671ee0fb355252268dce95a"
+        }
+    },
+    "bin": "terraform",
+    "checkver": {
+        "url": "https://releases.hashicorp.com/terraform/",
+        "regex": "terraform_([\\d.]+)</a>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://releases.hashicorp.com/terraform/$version/terraform_$version_darwin_arm64.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/terraform_$version_SHA256SUMS"
+        }
+    }
+}
