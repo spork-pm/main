@@ -5,11 +5,39 @@
     "license": "MIT",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/Azure/azure-cli/releases/download/azure-cli-2.91.0/azure-cli-2.91.0-macos-arm64.tar.gz",
-            "hash": "sha256:dc28a3eef40d0b20f266f1e76b7a91f7a8ecdeaa28d0c855459eaa74edacbae6"
+            "url": [
+                "https://github.com/Azure/azure-cli/releases/download/azure-cli-2.91.0/azure-cli-2.91.0-macos-arm64.tar.gz",
+                "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.14.10+20261026-aarch64-apple-darwin-install_only.tar.gz"
+            ],
+            "hash": [
+                "sha256:dc28a3eef40d0b20f266f1e76b7a91f7a8ecdeaa28d0c855459eaa74edacbae6",
+                "sha256:30a18bcb9ab75e485b4bf4e5d783dde165571e7e42c56dff47a2d2c5345183a4"
+            ]
         }
     },
-    "bin": "bin/az",
+    "pre_install": [
+        "# The az launcher needs a Python 3.14 in AZ_PYTHON. The second download is a",
+        "# portable 3.14 from python-build-standalone, unpacked into python/. The command",
+        "# spork links is a small wrapper that sets AZ_PYTHON. Paths go through 'current'",
+        "# so the wrapper keeps working after updates.",
+        "root=\"$(dirname \"$dir\")/current\"",
+        "mkdir -p \"$dir/spork-bin\"",
+        "cat > \"$dir/spork-bin/az\" <<EOF",
+        "#!/bin/sh",
+        "export AZ_PYTHON=\"\\${AZ_PYTHON:-$root/python/bin/python3.14}\"",
+        "exec \"$root/bin/az\" \"\\$@\"",
+        "EOF",
+        "chmod +x \"$dir/spork-bin/az\""
+    ],
+    "bin": [
+        [
+            "spork-bin/az",
+            "az"
+        ]
+    ],
+    "notes": [
+        "az runs on its own Python 3.14, bundled in this package. Set AZ_PYTHON to use another one."
+    ],
     "checkver": {
         "github": "https://github.com/Azure/azure-cli",
         "regex": "azure-cli-([\\d.]+)"
@@ -17,7 +45,10 @@
     "autoupdate": {
         "architecture": {
             "arm64": {
-                "url": "https://github.com/Azure/azure-cli/releases/download/azure-cli-$version/azure-cli-$version-macos-arm64.tar.gz"
+                "url": [
+                    "https://github.com/Azure/azure-cli/releases/download/azure-cli-$version/azure-cli-$version-macos-arm64.tar.gz",
+                    "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.14.10+20261026-aarch64-apple-darwin-install_only.tar.gz"
+                ]
             }
         }
     }
