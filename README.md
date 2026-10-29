@@ -12,6 +12,7 @@ spork drawer add main https://github.com/spork-pm/main
 
 | Package | Description |
 |---|---|
+| `dotnet10=sdk` | .NET Core 10 SDK |
 | `fd` | A simple, fast and user-friendly alternative to find |
 | `git` | A free and open source distributed version control system |
 | `jq` | Command-line JSON processor |
