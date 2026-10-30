@@ -33,9 +33,8 @@
         "nodejs and nodejs-lts provide the same commands; install only one of them."
     ],
     "checkver": {
-        "url": "https://nodejs.org/dist/index.json",
-        "jsonpath": "$[0].version",
-        "regex": "v([\\d.]+)"
+        "url": "https://nodejs.org/dist/latest/SHASUMS256.txt",
+        "regex": "node-v([\\d.]+)-darwin-arm64\\.tar\\.gz"
     },
     "autoupdate": {
         "architecture": {

@@ -7,11 +7,13 @@
         "arm64": {
             "url": "https://dl.k8s.io/release/v1.37.2/bin/darwin/arm64/kubectl",
             "hash": "sha256:55701af0d51815ee335f240e48acf0959c3c23017ed3fa816e880c4a92bae581"
+        },
+        "x86_64": {
+            "url": "https://dl.k8s.io/release/v1.37.2/bin/darwin/amd64/kubectl",
+            "hash": "sha256:88379aff5c8111de6be0a394adffba2819e44cde269f3ab23cef76de1a48eaa8"
         }
     },
-    "bin": [
-        "kubectl"
-    ],
+    "bin": "kubectl",
     "checkver": {
         "url": "https://dl.k8s.io/release/stable.txt",
         "regex": "v([\\d.]+)"
@@ -20,6 +22,9 @@
         "architecture": {
             "arm64": {
                 "url": "https://dl.k8s.io/release/v$version/bin/darwin/arm64/kubectl"
+            },
+            "x86_64": {
+                "url": "https://dl.k8s.io/release/v$version/bin/darwin/amd64/kubectl"
             }
         },
         "hash": {

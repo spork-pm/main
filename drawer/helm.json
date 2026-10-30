@@ -8,16 +8,24 @@
             "url": "https://get.helm.sh/helm-v4.3.1-darwin-arm64.tar.gz",
             "hash": "sha256:6b4e61c8cd27d99e5a801e63ff25dd5c70b36875c2cd659d3e9ce6b76fc23198",
             "extract_dir": "darwin-arm64"
+        },
+        "x86_64": {
+            "url": "https://get.helm.sh/helm-v4.3.1-darwin-amd64.tar.gz",
+            "hash": "sha256:34bec4eba761ba5c16d1965ee6b8f5b0abe5993974a802274e2a4f0418893d89",
+            "extract_dir": "darwin-amd64"
         }
     },
     "bin": "helm",
     "checkver": {
-        "github": "https://github.com/helm/helm"
+        "github": "helm/helm"
     },
     "autoupdate": {
         "architecture": {
             "arm64": {
                 "url": "https://get.helm.sh/helm-v$version-darwin-arm64.tar.gz"
+            },
+            "x86_64": {
+                "url": "https://get.helm.sh/helm-v$version-darwin-amd64.tar.gz"
             }
         },
         "hash": {

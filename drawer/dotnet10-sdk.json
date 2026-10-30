@@ -7,6 +7,10 @@
         "arm64": {
             "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.403/dotnet-sdk-10.0.403-osx-arm64.tar.gz",
             "hash": "sha512:5893c66b48ea3674c7da18501059d606e96f3672fabe4d5e41762e692c7c83df3ee0b2b9dc5a0786191da2dc413d7335158101c14c935ab217f31ac2529770f3"
+        },
+        "x86_64": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.403/dotnet-sdk-10.0.403-osx-x64.tar.gz",
+            "hash": "sha512:ce95d225b86d2401f111c2aa6df0f5e6855c375b7b34ab4a73df90c56f2b0fc2a44398cfe455cb689670bc8590012e943b64c7a590122af98cdc067721b12223"
         }
     },
     "env_add_path": ".",
@@ -18,11 +22,20 @@
         "architecture": {
             "arm64": {
                 "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/$version/dotnet-sdk-$version-osx-arm64.tar.gz"
+            },
+            "x86_64": {
+                "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/$version/dotnet-sdk-$version-osx-x64.tar.gz"
             }
         },
         "hash": {
             "url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/$majorVersion.$minorVersion/releases.json",
             "regex": "/$basename\",\\s*\"hash\":\\s*\"(?<hash>[0-9a-f]{128})\""
         }
-    }
+    },
+    "notes": [
+        "dotnet is on PATH in new terminals (spork shellenv adds it).",
+        "Global tools (dotnet tool install -g) go in ~/.dotnet/tools. To use them, add that folder to PATH",
+        "and point them at this SDK in ~/.zshrc:",
+        "    export DOTNET_ROOT=\"$HOME/.spork/apps/dotnet10-sdk/current\""
+    ]
 }
