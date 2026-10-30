@@ -1,0 +1,31 @@
+{
+    "version": "2.2.1",
+    "description": "Linux virtual machines, with automatic file sharing and port forwarding",
+    "homepage": "https://github.com/lima-vm/lima",
+    "license": "Apache-2.0",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/lima-vm/lima/releases/download/v2.2.1/lima-2.2.1-Darwin-arm64.tar.gz",
+            "hash": "sha256:9e9eacce88f37e185c346bad73aa6136f738d8cdf8c3bb23cd42b071824bc66e"
+        },
+        "x86_64": {
+            "url": "https://github.com/lima-vm/lima/releases/download/v2.2.1/lima-2.2.1-Darwin-x86_64.tar.gz",
+            "hash": "sha256:6b776e4bc41f358e6ee01fefcc78e2eb26f11635a0fcff632234af77a566c6c4"
+        }
+    },
+    "bin": ["bin/limactl", "bin/lima"],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/lima-vm/lima/releases/download/v$version/lima-$version-Darwin-arm64.tar.gz"
+            },
+            "x86_64": {
+                "url": "https://github.com/lima-vm/lima/releases/download/v$version/lima-$version-Darwin-x86_64.tar.gz"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS"
+        }
+    }
+}
