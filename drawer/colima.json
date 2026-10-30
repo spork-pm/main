@@ -1,0 +1,37 @@
+{
+    "version": "0.10.3",
+    "description": "Container runtimes (Docker, containerd, Kubernetes) in a Linux VM, with minimal setup",
+    "homepage": "https://github.com/abiosoft/colima",
+    "license": "MIT",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/abiosoft/colima/releases/download/v0.10.3/colima-Darwin-arm64#/colima",
+            "hash": "sha256:980ad8bf61a4ca370243f4cb41401a61276dcd2c2502bee7b9b86f9250169f34"
+        },
+        "x86_64": {
+            "url": "https://github.com/abiosoft/colima/releases/download/v0.10.3/colima-Darwin-x86_64#/colima",
+            "hash": "sha256:3082737fe8a98afda11cba7d9a20b6e56fe80c6153464beda04bec630758770b"
+        }
+    },
+    "bin": "colima",
+    "depends": ["lima"],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/abiosoft/colima/releases/download/v$version/colima-Darwin-arm64#/colima"
+            },
+            "x86_64": {
+                "url": "https://github.com/abiosoft/colima/releases/download/v$version/colima-Darwin-x86_64#/colima"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256sum",
+            "regex": "^([0-9a-f]{64})"
+        }
+    },
+    "notes": [
+        "Start the VM with: colima start",
+        "For the docker command, run: spork install docker"
+    ]
+}
