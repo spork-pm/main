@@ -8,15 +8,23 @@
             "url": "https://github.com/Azure/kubelogin/releases/download/v0.2.22/kubelogin-darwin-arm64.zip",
             "hash": "sha256:b586d6409d578f2048053a6117ace47f0154f36c5beb6792c674679987a7efc8",
             "bin": "bin/darwin_arm64/kubelogin"
+        },
+        "x86_64": {
+            "url": "https://github.com/Azure/kubelogin/releases/download/v0.2.22/kubelogin-darwin-amd64.zip",
+            "hash": "sha256:6f4a17811e5d5815bb005daae5dabce3d016c2caac84a097f1db4263344f113e",
+            "bin": "bin/darwin_amd64/kubelogin"
         }
     },
     "checkver": {
-        "github": "https://github.com/Azure/kubelogin/"
+        "github": "Azure/kubelogin"
     },
     "autoupdate": {
         "architecture": {
             "arm64": {
                 "url": "https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-darwin-arm64.zip"
+            },
+            "x86_64": {
+                "url": "https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-darwin-amd64.zip"
             }
         },
         "hash": {

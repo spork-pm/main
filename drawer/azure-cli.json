@@ -13,6 +13,16 @@
                 "sha256:dc28a3eef40d0b20f266f1e76b7a91f7a8ecdeaa28d0c855459eaa74edacbae6",
                 "sha256:30a18bcb9ab75e485b4bf4e5d783dde165571e7e42c56dff47a2d2c5345183a4"
             ]
+        },
+        "x86_64": {
+            "url": [
+                "https://github.com/Azure/azure-cli/releases/download/azure-cli-2.91.0/azure-cli-2.91.0-macos-x86_64.tar.gz",
+                "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.14.10+20261026-x86_64-apple-darwin-install_only.tar.gz"
+            ],
+            "hash": [
+                "sha256:b8c51c518c526d9ee0fd47716236f91804b578f9d560a2d8f60266fac7b67d6f",
+                "sha256:01cedae5d4a66ac570e13cb35fa570d0e79ba8e9affd4518a5d85b6c2b98ff10"
+            ]
         }
     },
     "pre_install": [
@@ -39,7 +49,7 @@
         "az runs on its own Python 3.14, bundled in this package. Set AZ_PYTHON to use another one."
     ],
     "checkver": {
-        "github": "https://github.com/Azure/azure-cli",
+        "github": "Azure/azure-cli",
         "regex": "azure-cli-([\\d.]+)"
     },
     "autoupdate": {
@@ -48,6 +58,12 @@
                 "url": [
                     "https://github.com/Azure/azure-cli/releases/download/azure-cli-$version/azure-cli-$version-macos-arm64.tar.gz",
                     "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.14.10+20261026-aarch64-apple-darwin-install_only.tar.gz"
+                ]
+            },
+            "x86_64": {
+                "url": [
+                    "https://github.com/Azure/azure-cli/releases/download/azure-cli-$version/azure-cli-$version-macos-x86_64.tar.gz",
+                    "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.14.10+20261026-x86_64-apple-darwin-install_only.tar.gz"
                 ]
             }
         }
