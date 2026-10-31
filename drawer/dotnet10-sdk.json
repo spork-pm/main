@@ -14,6 +14,9 @@
         }
     },
     "env_add_path": ".",
+    "env_set": {
+        "DOTNET_ROOT": "$dir"
+    },
     "checkver": {
         "url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/10.0/releases.json",
         "jsonpath": "$['latest-sdk']"
@@ -33,9 +36,9 @@
         }
     },
     "notes": [
-        "dotnet is on PATH in new terminals (spork shellenv adds it).",
-        "Global tools (dotnet tool install -g) go in ~/.dotnet/tools. To use them, add that folder to PATH",
-        "and point them at this SDK in ~/.zshrc:",
-        "    export DOTNET_ROOT=\"$HOME/.spork/apps/dotnet10-sdk/current\""
+        "dotnet is on PATH, and DOTNET_ROOT points at this SDK, in new terminals (spork shellenv sets both).",
+        "If you added DOTNET_ROOT to ~/.zshrc yourself, you can remove that line.",
+        "Global tools (dotnet tool install -g) go in ~/.dotnet/tools. To run them by name, add this to ~/.zshrc:",
+        "    export PATH=\"$PATH:$HOME/.dotnet/tools\""
     ]
 }
