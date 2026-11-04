@@ -11,12 +11,14 @@
     },
     "bin": [["sonarqube"]],
     "checkver": {
-        "url": "https://binaries.sonarsource.com/Distribution/sonarqube-cli/stable.version"
+        "url": "https://binaries.sonarsource.com/Distribution/sonarqube-cli/stable.version",
+        "regex": ".*"
     },
     "autoupdate": {
         "architecture": {
             "arm64": {
-                "url": "https://binaries.sonarsource.com/Distribution/sonarqube-cli/$version/macos/sonarqube-cli-$version-macos-arm64.bin#sonarqube"
+                "url": "https://binaries.sonarsource.com/Distribution/sonarqube-cli/$version/macos/sonarqube-cli-$version-macos-arm64.bin#sonarqube",
+                "hash": "$url.sha256"
             }
         }
     }
