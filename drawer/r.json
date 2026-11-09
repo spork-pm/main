@@ -6,13 +6,12 @@
     "architecture": {
         "arm64": {
             "url": "https://pbil.univ-lyon1.fr/CRAN/bin/macosx/sonoma-arm64/base/R-4.6.2-arm64.pkg",
-            "hash": "sha1:89f81b9fb203e5f713d74804aa03e729ae414a0b",
+            "hash": "sha256:a678b4db1fcd71b1b1cc58edcfa4a8d36ee012a02659dde9eab9366e93571157",
             "bin": [
                 "R.framework/R"
             ]
         }
     },
-    "persist": "site-library",
     "checkver": {
         "url": "https://pbil.univ-lyon1.fr/CRAN/bin/macosx/",
         "regex": "R-([\\d.]+)"
