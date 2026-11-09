@@ -14,7 +14,7 @@
     },
     "persist": "site-library",
     "checkver": {
-        "url": "https://pbil.univ-lyon1.fr/CRAN/bin/macosx/sonoma-arm64/base/",
+        "url": "https://pbil.univ-lyon1.fr/CRAN/bin/macosx/",
         "regex": "R-([\\d.]+)"
     },
     "autoupdate": {
@@ -22,9 +22,6 @@
             "arm64": {
                 "url": "https://pbil.univ-lyon1.fr/CRAN/bin/macosx/sonoma-arm64/base/R-$version-arm64.pkg"
             }
-        },
-        "hash": {
-            "url": "$baseurl/md5sum.R-$version.txt"
         }
     }
 }
