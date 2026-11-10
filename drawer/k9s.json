@@ -1,0 +1,28 @@
+{
+    "version": "0.51.0",
+    "description": "Kubernetes CLI To Manage Your Clusters In Style!",
+    "homepage": "https://github.com/derailed/k9s",
+    "license": "Apache-2.0",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/derailed/k9s/releases/download/v0.51.0/k9s_Darwin_arm64.tar.gz",
+            "hash": "sha256:9b8c0e8f461e5d33aeee43a67f5ef4aff646a008a786887b8266cbb153c610cc"
+        },
+        "x86_64": {
+            "url": "https://github.com/derailed/k9s/releases/download/v$version/k9s_Darwin_amd64.tar.gz",
+            "hash": "sha256:7e8802c57c45a0cd389e8fc38472243fe4cf48d8ad5957e189ce370e19e5eda0"
+        }
+    },
+    "bin": "k9s",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/derailed/k9s/releases/download/v$version/k9s_Darwin_arm64.tar.gz"
+            },
+            "x86_64": {
+                "url": "https://github.com/derailed/k9s/releases/download/v$version/k9s_Darwin_amd64.tar.gz"
+            }
+        }
+    }
+}
