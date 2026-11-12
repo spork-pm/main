@@ -1,0 +1,44 @@
+{
+    "version": "11.0.100",
+    "description": ".NET 11 SDK, for building and running .NET apps",
+    "homepage": "https://www.microsoft.com/net/",
+    "license": "MIT",
+    "architecture": {
+        "arm64": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/11.0.100/dotnet-sdk-11.0.100-osx-arm64.tar.gz",
+            "hash": "sha512:6c8978e0a8f24a04b69a539fe29edf0c68e3247e46e24afb4920ee479e2ce1256b17fdf0626f8835b9c743784c08b40ecb25abdd8dd49fc99d040daf1ddb4de2"
+        },
+        "x86_64": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/11.0.100/dotnet-sdk-11.0.100-osx-x64.tar.gz",
+            "hash": "sha512:8e9c8835c4d1ed8e3045f1a00e5831b028fb090161d1acbeb6e8b26882cb783ff18ab04f478134bf51b538f2becbbf999737c18f17c568ef37fb94a91a03d6a5"
+        }
+    },
+    "env_add_path": ".",
+    "env_set": {
+        "DOTNET_ROOT": "$dir"
+    },
+    "checkver": {
+        "url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/11.0/releases.json",
+        "jsonpath": "$['latest-sdk']"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/$version/dotnet-sdk-$version-osx-arm64.tar.gz"
+            },
+            "x86_64": {
+                "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/$version/dotnet-sdk-$version-osx-x64.tar.gz"
+            }
+        },
+        "hash": {
+            "url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/$majorVersion.$minorVersion/releases.json",
+            "regex": "/$basename\",\\s*\"hash\":\\s*\"(?<hash>[0-9a-f]{128})\""
+        }
+    },
+    "notes": [
+        "dotnet is on PATH, and DOTNET_ROOT points at this SDK, in new terminals (spork shellenv sets both).",
+        "If you added DOTNET_ROOT to ~/.zshrc yourself, you can remove that line.",
+        "Global tools (dotnet tool install -g) go in ~/.dotnet/tools. To run them by name, add this to ~/.zshrc:",
+        "    export PATH=\"$PATH:$HOME/.dotnet/tools\""
+    ]
+}
