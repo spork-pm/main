@@ -1,0 +1,26 @@
+{
+    "version": "4.6.2",
+    "description": "A free software environment for statistical computing and graphics.",
+    "homepage": "https://www.r-project.org",
+    "license": "GPL-2.0-or-later",
+    "architecture": {
+        "arm64": {
+            "url": "https://pbil.univ-lyon1.fr/CRAN/bin/macosx/sonoma-arm64/base/R-4.6.2-arm64.pkg",
+            "hash": "sha256:a678b4db1fcd71b1b1cc58edcfa4a8d36ee012a02659dde9eab9366e93571157",
+            "bin": [
+                "R.framework/R"
+            ]
+        }
+    },
+    "checkver": {
+        "url": "https://pbil.univ-lyon1.fr/CRAN/bin/macosx/",
+        "regex": "R-([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://pbil.univ-lyon1.fr/CRAN/bin/macosx/sonoma-arm64/base/R-$version-arm64.pkg"
+            }
+        }
+    }
+}
