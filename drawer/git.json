@@ -1,16 +1,16 @@
 {
-    "version": "2.56.0-2",
+    "version": "2.56.1",
     "description": "A free and open source distributed version control system",
     "homepage": "https://git-scm.com",
     "license": "GPL-2.0-only",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/desktop/dugite-native/releases/download/v2.56.0-2/dugite-native-v2.56.0-a44aeca-macOS-arm64.tar.gz",
-            "hash": "sha256:1110de343de11cc6f469b782b60f36217b9199b5e06875dd65baa26dd60563c7"
+            "url": "https://github.com/desktop/dugite-native/releases/download/v2.56.1/dugite-native-v2.56.1-238326e-macOS-arm64.tar.gz",
+            "hash": "sha256:a882ec6882416b57d212a22bac845ae27944f96cf73453a864f6a12c17863a79"
         },
         "x86_64": {
-            "url": "https://github.com/desktop/dugite-native/releases/download/v2.56.0-2/dugite-native-v2.56.0-a44aeca-macOS-x64.tar.gz",
-            "hash": "sha256:52cc663281e1ec2f1d76ba781193ca4847e62dbbf767f6c99ec9ec5b978a7659"
+            "url": "https://github.com/desktop/dugite-native/releases/download/v2.56.1/dugite-native-v2.56.1-238326e-macOS-x64.tar.gz",
+            "hash": "sha256:3fdb0c2f102fe0273d64b5d5fb77315c19f2b4648a154593723cb9ed98f2bc7d"
         }
     },
     "pre_install": [
@@ -54,7 +54,7 @@
     ],
     "checkver": {
         "github": "desktop/dugite-native",
-        "regex": "download/v(?<version>[\\d.]+-\\d+)/dugite-native-v[\\d.]+-(?<commit>[0-9a-f]+)-macOS-arm64\\.tar\\.gz"
+        "regex": "download/v(?<version>[\\d.]+(?:-\\d+)?)/dugite-native-v[\\d.]+-(?<commit>[0-9a-f]+)-macOS-arm64\\.tar\\.gz"
     },
     "autoupdate": {
         "architecture": {
