@@ -53,7 +53,8 @@
         "    git config --global credential.helper manager"
     ],
     "checkver": {
-        "github": "desktop/dugite-native"
+        "github": "desktop/dugite-native",
+        "regex": "download/v(?<version>[\\d.]+(?:-\\d+)?)/dugite-native-v[\\d.]+-(?<commit>[0-9a-f]+)-macOS-arm64\\.tar\\.gz"
     },
     "autoupdate": {
         "architecture": {
