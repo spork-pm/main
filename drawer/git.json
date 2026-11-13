@@ -53,7 +53,7 @@
         "    git config --global credential.helper manager"
     ],
     "checkver": {
-        "github": "desktop/dugite-native",
+        "github": "desktop/dugite-native"
     },
     "autoupdate": {
         "architecture": {
