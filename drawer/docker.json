@@ -1,16 +1,16 @@
 {
-    "version": "29.9.3",
+    "version": "29.10.0",
     "description": "Docker command-line client, for a Docker engine running elsewhere (Colima, a VM or a remote host)",
     "homepage": "https://docs.docker.com/engine",
     "license": "Apache-2.0",
     "architecture": {
         "arm64": {
-            "url": "https://download.docker.com/mac/static/stable/aarch64/docker-29.9.3.tgz",
-            "hash": "sha256:79145e169bca0b9571d02de8e1cd311a36e0e8fdb4599b6661a87b1bb3afbe13"
+            "url": "https://download.docker.com/mac/static/stable/aarch64/docker-29.10.0.tgz",
+            "hash": "sha256:84025e01f7716eb8bd1064c49a9d2b3a38547fa963983e81017c73ee8c5d540b"
         },
         "x86_64": {
-            "url": "https://download.docker.com/mac/static/stable/x86_64/docker-29.9.3.tgz",
-            "hash": "sha256:f7d8f835391cd0a8c676d9a8d2547f909da6a2d029595943b0ce8d5f169abe47"
+            "url": "https://download.docker.com/mac/static/stable/x86_64/docker-29.10.0.tgz",
+            "hash": "sha256:18fd600a2fc0bc2e62f34f66b0fd717dc2a774aa533bf3cef98011b9d37e0459"
         }
     },
     "extract_dir": "docker",
