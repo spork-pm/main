@@ -22,7 +22,7 @@
             "$name = json_path $page $..binaries[0].package.name",
             "Write-Output \"$ver $link $name\""
         ],
-        "regex": "(?<ver>.*?) https://github.com/(?<link>.*?)/tag/(?<tag>.*?) (?<name>(?<prefix>OpenJDK[\\dU]*-[dejkr]{3})_x64_(?<suffix>.*))",
+        "regex": "(?<ver>.*?) https://github.com/(?<link>.*?)/tag/(?<tag>.*?) (?<name>(?<prefix>OpenJDK[\\dU]*-[dejkr]{3})_aarch64_(?<suffix>.*))",
         "replace": "${ver}"
     },
     "autoupdate": {
