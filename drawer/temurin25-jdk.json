@@ -15,26 +15,18 @@
         "JAVA_HOME": "$dir/Home"
     },
     "checkver": {
-        "url": "https://api.adoptium.net/v3/assets/feature_releases/25/ga?jvm_impl=hotspot&heap_size=normal&os=mac&architecture=aarch64&image_type=jdk&project=jdk&vendor=eclipse&page_size=1&sort_order=DESC",
-        "script": [
-            "$ver = (json_path $page $..version_data.semver).replace('+', '-').replace('.LTS', '')",
-            "$link = (json_path $page $..release_link).replace('%2B', '+')",
-            "$name = json_path $page $..binaries[0].package.name",
-            "Write-Output \"$ver $link $name\""
-        ],
-        "regex": "(?<ver>.*?) https://github.com/(?<link>.*?)/tag/(?<tag>.*?) (?<name>(?<prefix>OpenJDK[\\dU]*-[dejkr]{3})_aarch64_(?<suffix>.*))",
-        "replace": "${ver}"
+        "github" : "adoptium/temurin25-binaries"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/$matchLink/download/$matchTag/$matchName"
+                "url": "https://github.com/adoptium/temurin25-binaries/releases/download/$version/OpenJDK25U-jdk_aarch64_mac_hotspot_$version.tar.gz"
             }
         },
         "hash": {
             "url": "$url.sha256.txt",
             "find": "^([a-fA-F0-9]+)\\s"
         },
-        "extract_dir": "$matchTag"
+        "extract_dir": "$matchTag/Contents"
     }
 }
