@@ -20,7 +20,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/adoptium/temurin25-binaries/releases/download/$version/OpenJDK25U-jdk_aarch64_mac_hotspot_$version.tar.gz"
+                "url": "https://github.com/adoptium/temurin25-binaries/releases/download/$version/OpenJDK25U-jdk_aarch64_mac_hotspot_$majorVersion.$minorVersion.$patchVersion_$buildVersion.tar.gz"
             }
         },
         "hash": {
