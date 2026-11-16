@@ -1,5 +1,5 @@
 {
-    "version": "0.36.0",
+    "version": "0.37.0",
     "description": "A Kubernetes TUI, reimagined in Rust - built on kube-rs and ratatui, async-first from the ground up.",
     "homepage": "https://sofka.rs",
     "license": [
@@ -8,12 +8,12 @@
     ],
     "architecture": {
         "arm64": {
-            "url": "https://github.com/nklmilojevic/sofka/releases/download/v0.36.0/sofka-v0.36.0-aarch64-apple-darwin.tar.gz",
-            "hash": "sha256:0f53cadb3035e1a034cefab1fec7cce65c77764e446c676269683716adb2ee19"
+            "url": "https://github.com/nklmilojevic/sofka/releases/download/v0.37.0/sofka-v0.37.0-aarch64-apple-darwin.tar.gz",
+            "hash": "sha256:1a9076ecdf78a438a36406991c16b27a8fc84eab90832cd97ab4742a657bfebb"
         },
         "x86_64": {
-            "url": "https://github.com/nklmilojevic/sofka/releases/download/v0.36.0/sofka-v0.36.0-x86_64-apple-darwin.tar.gz",
-            "hash": "sha256:015fcfe1421dcfa86e33d897b0eaa22122d4094932e91a6a0a234f9c71111932"
+            "url": "https://github.com/nklmilojevic/sofka/releases/download/v0.37.0/sofka-v0.37.0-x86_64-apple-darwin.tar.gz",
+            "hash": "sha256:8d587eebb2191913cc877530c817a4454ce7e5610f36e1c31e3c3beb3af2e163"
         }
     },
     "bin": "sofka",
