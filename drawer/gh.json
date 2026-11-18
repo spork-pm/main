@@ -1,18 +1,18 @@
 {
-    "version": "2.104.0",
+    "version": "2.105.0",
     "description": "GitHub's official command-line tool",
     "homepage": "https://cli.github.com",
     "license": "MIT",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/cli/cli/releases/download/v2.104.0/gh_2.104.0_macOS_arm64.zip",
-            "hash": "sha256:23b12706219b9892e44236f988444a24adcf29284e16b35e03ba5b863fb6eb8e",
-            "extract_dir": "gh_2.104.0_macOS_arm64"
+            "url": "https://github.com/cli/cli/releases/download/v2.105.0/gh_2.105.0_macOS_arm64.zip",
+            "hash": "sha256:2a5d03103ae444927383b93d9ffd65579a26e2eb900ce1cf11f55258d5319ded",
+            "extract_dir": "gh_2.105.0_macOS_arm64"
         },
         "x86_64": {
-            "url": "https://github.com/cli/cli/releases/download/v2.104.0/gh_2.104.0_macOS_amd64.zip",
-            "hash": "sha256:a8c2a708dbae89dc7c05ba7b0beafc95bd8d09ab4a3505467b77d32ebf364dc6",
-            "extract_dir": "gh_2.104.0_macOS_amd64"
+            "url": "https://github.com/cli/cli/releases/download/v2.105.0/gh_2.105.0_macOS_amd64.zip",
+            "hash": "sha256:23602cbccbbdc6285a8520745b714cb927ce2ca621779373c2a20cd8e33fda66",
+            "extract_dir": "gh_2.105.0_macOS_amd64"
         }
     },
     "bin": "bin/gh",
