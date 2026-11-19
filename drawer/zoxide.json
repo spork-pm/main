@@ -1,7 +1,7 @@
 {
     "version": "0.10.0",
     "description": "A smarter cd command",
-    "homepage": "https://crates.io/crates/zoxide",
+    "homepage": "https://zoxide.org",
     "license": "MIT",
     "architecture": {
         "arm64": {
@@ -13,7 +13,7 @@
             "hash": "sha256:18ab7ae2633ad6e2ab79a4e665cbba1e95b7c872d44523326efb793202451dad"
         }
     },
-    "bin": [["zoxide", "z"]],
+    "bin": "zoxide",
     "checkver": {
       "github": "ajeetdsouza/zoxide"
     },
@@ -26,5 +26,10 @@
                 "url": "https://github.com/ajeetdsouza/zoxide/releases/download/v$version/zoxide-$version-x86_64-apple-darwin.tar.gz"
             }
         }
-    }
+    },
+    "notes": [
+        "To use it, add this line at the end of ~/.zshrc (after the spork line):",
+        "    eval \"$(zoxide init zsh)\"",
+        "For bash use 'zoxide init bash' in ~/.bash_profile; for fish, 'zoxide init fish | source' in config.fish"
+    ]
 }
