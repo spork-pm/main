@@ -1,12 +1,12 @@
 {
-    "version": "0.13.1",
+    "version": "0.13.2",
     "description": "An HTTP proxy server to automatically authenticate through an NTLM proxy",
     "homepage": "https://github.com/genotrance/px",
     "license": "MIT",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/genotrance/px/releases/download/v0.13.1/px-v0.13.1-mac-arm64.tar.gz",
-            "hash": "sha256:32d29d496ad6b13207a66de42c4bf747d58d8ee37df8ba59046f0b8ec44be48d"
+            "url": "https://github.com/genotrance/px/releases/download/v0.13.2/px-v0.13.2-mac-arm64.tar.gz",
+            "hash": "sha256:2450f2df6a8d986fa8eba9a281a62375c9ae681a1e841cd97887a9e60653b0c4"
         }
     },
     "bin": "px",
