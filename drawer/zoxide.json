@@ -13,7 +13,7 @@
             "hash": "sha256:18ab7ae2633ad6e2ab79a4e665cbba1e95b7c872d44523326efb793202451dad"
         }
     },
-    "bin": "z",
+    "bin": [["zoxide", "z"]],
     "checkver": {
       "github": "ajeetdsouza/zoxide"
     },
