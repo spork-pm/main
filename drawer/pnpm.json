@@ -1,16 +1,16 @@
 {
-    "version": "12.21.0",
+    "version": "12.23.0",
     "description": "Fast, disk space efficient package manager for JavaScript",
     "homepage": "https://pnpm.io/",
     "license": "MIT",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/pnpm/pnpm/releases/download/v12.21.0/pnpm-darwin-arm64.tar.gz",
-            "hash": "sha256:5c4d73018e00dd602531ce714625594fb693cbe110e6719df2b043b0ae62ab1a"
+            "url": "https://github.com/pnpm/pnpm/releases/download/v12.23.0/pnpm-darwin-arm64.tar.gz",
+            "hash": "sha256:52bb314bf0d48928fc15126ccce42aa199275e29018bef112a04ae8acdcaaf14"
         },
         "x86_64": {
-            "url": "https://github.com/pnpm/pnpm/releases/download/v12.21.0/pnpm-darwin-x64.tar.gz",
-            "hash": "sha256:415c05ae4262c89b8f24ca58c693be5d969856ae909c086aa06996951fca30ea"
+            "url": "https://github.com/pnpm/pnpm/releases/download/v12.23.0/pnpm-darwin-x64.tar.gz",
+            "hash": "sha256:9655877c63f33bbb64508871e443fc05a5e4a87641c1becd83a45717a4b15d90"
         }
     },
     "bin": [
@@ -53,6 +53,5 @@
                 "url": "https://github.com/pnpm/pnpm/releases/download/v$version/pnpm-darwin-x64.tar.gz"
             }
         }
-
     }
 }
