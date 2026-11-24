@@ -1,0 +1,31 @@
+{
+    "version": "0.64.0",
+    "description": "A command-line tool for updating multiple repositories with a single command.",
+    "homepage": "https://github.com/lindell/multi-gitter",
+    "license": "Apache-2.0",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/lindell/multi-gitter/releases/download/v0.64.0/multi-gitter_0.64.0_Darwin_ARM64.tar.gz",
+            "hash": "sha256:bb7f6bdd0fdc7514211a5110b0048924d17b62fb91131af3434b73394d58d30f"
+        },
+        "x86_64": {
+            "url": "https://github.com/lindell/multi-gitter/releases/download/v0.64.0/multi-gitter_0.64.0_Darwin_x86_64.tar.gz",
+            "hash": "sha256:988fc27da5bf51a1f4f48c02489e46cdbae42d402ea7f68fcf38452ca487461d"
+        }
+    },
+    "bin": "multi-gitter",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/lindell/multi-gitter/releases/download/v$version/multi-gitter_$version_Darwin_ARM64.tar.gz"
+            },
+            "x86_64": {
+                "url": "https://github.com/lindell/multi-gitter/releases/download/v$version/multi-gitter_$version_Darwin_x86_64.tar.gz"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/checksums.txt"
+        }
+    }
+}
