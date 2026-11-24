@@ -1,16 +1,16 @@
 {
-    "version": "3.15.2-20261123",
+    "version": "3.15.2-20261124",
     "description": "A programming language that lets you work quickly and integrate systems more effectively",
     "homepage": "https://www.python.org",
     "license": "PSF-2.0",
     "architecture": {
         "arm64": {
-            "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261123/cpython-3.15.2+20261123-aarch64-apple-darwin-install_only.tar.gz",
-            "hash": "sha256:9fd4fb8381a14289edfac593647dd4ae3f679053a2c69511f0133348e24b5a02"
+            "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261124/cpython-3.15.2+20261124-aarch64-apple-darwin-install_only.tar.gz",
+            "hash": "sha256:ca5a25ce351817d7c6fcc7c2f2c327ec28c540f728d2a5c8b4e380ed92c68936"
         },
         "x86_64": {
-            "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261123/cpython-3.15.2+20261123-x86_64-apple-darwin-install_only.tar.gz",
-            "hash": "sha256:36f70659e57ee65237d807e6acb5baa8bac4b1d43cc3cfef95e63b08f17ea4e1"
+            "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261124/cpython-3.15.2+20261124-x86_64-apple-darwin-install_only.tar.gz",
+            "hash": "sha256:3b02a3d29d7ca1260228b644a04c19ee1e22d26e69133365db8b94ebacfef4b7"
         }
     },
     "extract_dir": "python",
