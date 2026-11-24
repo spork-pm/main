@@ -1,12 +1,12 @@
 {
-    "version": "1.13.0.18157",
+    "version": "1.13.1.18209",
     "description": "Code quality and security for terminal workflows, scripts, and AI agents",
     "homepage": "https://www.sonarsource.com/sonarqube/cli/",
     "license": "Proprietary",
     "architecture": {
         "arm64": {
-            "url": "https://binaries.sonarsource.com/Distribution/sonarqube-cli/1.13.0.18157/macos/sonarqube-cli-1.13.0.18157-macos-arm64.bin#/sonarqube",
-            "hash": "sha256:1875ee76aad327bc957d5852b1bbb52408f8754de292ce7d761a8e1061ce86ac"
+            "url": "https://binaries.sonarsource.com/Distribution/sonarqube-cli/1.13.1.18209/macos/sonarqube-cli-1.13.1.18209-macos-arm64.bin#/sonarqube",
+            "hash": "sha256:f5de07e980a784a16c535ae51e2816df5961e2ecdb136224158be087f63ea9e2"
         }
     },
     "bin": "sonarqube",
