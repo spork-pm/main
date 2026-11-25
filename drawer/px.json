@@ -19,5 +19,38 @@
                 "url": "https://github.com/genotrance/px/releases/download/v$version/px-v$version-mac-arm64.tar.gz"
             }
         }
-    }
+    
+    },
+    "env_set": {
+        "https_proxy": "http://127.0.0.1:3128",
+        "http_proxy": "http://127.0.0.1:3128",
+        "HTTPS_PROXY": "http://127.0.0.1:3128",
+        "HTTP_PROXY": "http://127.0.0.1:3128"
+    },
+    "notes": "px is launched as a launchctl agent and the proxy env variables are automatically setup",
+    "post_install": [
+        "cat > ~/Library/LaunchAgents/com.px.agent.plist << EOF",
+        "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">",
+        "<plist version=\"1.0\">",
+        "<dict>",
+        "<key>Label</key>",
+        "<string>com.px.agent</string>",
+        "<key>ProgramArguments</key>",
+        "<array>",
+        "<string>$HOME/.spork/bin/px</string>",
+        "<string>--pac=`scutil --proxy | sed -n 's/^[[:space:]]*ProxyAutoConfigURLString[[:space:]]*:[[:space:]]*//p'`</string>",
+        "</array>",
+        "<key>RunAtLoad</key>",
+        "<true/>",
+        "<key>KeepAlive</key>",
+        "<true/>",
+        "<key>StandardOutPath</key>",
+        "<string>/tmp/px.log</string>",
+        "<key>StandardErrorPath</key>",
+        "<string>/tmp/px.error.log</string>",
+        "</dict>",
+        "</plist>",
+        "EOF",
+        "launchctl load ~/Library/LaunchAgents/com.px.agent.plist"
+    ]
 }
