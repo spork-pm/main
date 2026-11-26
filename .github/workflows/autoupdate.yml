@@ -1,11 +1,8 @@
-# Copy this into a drawer repo as .github/workflows/autoupdate.yml.
-# Every 6 hours it checks each manifest that has a "checkver" field, and commits
-# the ones with a newer version (after a test install on macOS).
 name: Autoupdate
 
 on:
   schedule:
-    - cron: "23 */6 * * *"
+    - cron: "0 9,12,15,20 * * *"
   workflow_dispatch:
     inputs:
       packages:
