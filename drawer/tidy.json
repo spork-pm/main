@@ -1,0 +1,33 @@
+{
+    "version": "2.1.0",
+    "description": "The fast & easy way to keep source files tidy",
+    "homepage": "https://tidy.lukeed.com/",
+    "license": "MIT",
+    "architecture": {
+        "arm64": {
+            "url": "https://github.com/lukeed/tidy/releases/download/v2.1.0/tidy-aarch64-apple-darwin.tar.gz",
+            "hash": "sha256:b4c59b82df3016634d2c20f6d165884d570d42555ced7cf1bc3e7000079d3aac"
+        },
+        "x86_64": {
+            "url": "https://github.com/lukeed/tidy/releases/download/v2.1.0/tidy-x86_64-apple-darwin.tar.gz",
+            "hash": "sha256:83639e40f81751ecb3d8be7aba9b2bb813fbd3598327bd0a092a2a2937d1405d"
+        }
+    },
+    "bin": "tidy",
+    "checkver": {
+        "github": "lukeed/tidy"
+    },
+    "autoupdate": {
+        "architecture": {
+            "arm64": {
+                "url": "https://github.com/lukeed/tidy/releases/download/v$version/tidy-aarch64-apple-darwin.tar.gz"
+            },
+            "x86_64": {
+                "url": "https://github.com/lukeed/tidy/releases/download/v$version/tidy-x86_64-apple-darwin.tar.gz"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
