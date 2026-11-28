@@ -1,5 +1,5 @@
 {
-    "version": "1.100.0",
+    "version": "1.100.1",
     "description": "A language empowering everyone to build reliable and efficient software. (MSVC toolchain)",
     "homepage": "https://www.rust-lang.org",
     "license": "MIT|Apache-2.0",
@@ -11,14 +11,14 @@
     ],
     "architecture": {
         "arm64": {
-            "url": "https://static.rust-lang.org/dist/rust-1.100.0-aarch64-apple-darwin.tar.xz",
-            "hash": "sha256:68ba729fe20df0f74309ef55ffbe518fc982177f327651b06112ef11e8e1de0d",
-            "extract_dir": "rust-1.100.0-aarch64-apple-darwin"
+            "url": "https://static.rust-lang.org/dist/rust-1.100.1-aarch64-apple-darwin.tar.xz",
+            "hash": "sha256:d3ef86b9c27587497485824d8d485146c6759041c6f343e81f962213b3ea6752",
+            "extract_dir": "rust-1.100.1-aarch64-apple-darwin"
         },
         "x86_64": {
-            "url": "https://static.rust-lang.org/dist/rust-1.100.0-x86_64-apple-darwin.tar.xz",
-            "hash": "sha256:7669d8521e663c012d3f44081b5419112f329cafd5cfbdd3b9c24c14ba9eadbb",
-            "extract_dir": "rust-1.100.0-x86_64-apple-darwin"
+            "url": "https://static.rust-lang.org/dist/rust-1.100.1-x86_64-apple-darwin.tar.xz",
+            "hash": "sha256:fcc73fde72f0b89120cf4a163cd0632da8c1b244a962af74c37ae7c330180de4",
+            "extract_dir": "rust-1.100.1-x86_64-apple-darwin"
         }
     },
     "bin": [
